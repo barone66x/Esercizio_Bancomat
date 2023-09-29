@@ -11,11 +11,14 @@ namespace BankomatSimulator
         private double _saldo;
         private long _idContoCorrente;
         private DateTime _dataUltimoVersamento;
-       
-        public ContoCorrente()
+
+        public ContoCorrente(ContiCorrente data)
         {
             DateTime date = DateTime.Now;
             _dataUltimoVersamento = date.AddDays(-1);
+            _saldo = data.Saldo;
+            IdContoCorrente = data.Id;
+
         }
 
         public struct DatiReport
@@ -29,7 +32,7 @@ namespace BankomatSimulator
 
         public long IdContoCorrente { get => _idContoCorrente; set => _idContoCorrente = value; }
 
-        
+
         /// <summary>
         /// Versa, nel conto corrente, la quantità indicata
         /// </summary>
@@ -56,7 +59,7 @@ namespace BankomatSimulator
             if (_saldo >= quantita)
             {
                 _saldo -= quantita;
-                
+
             }
             else
                 isOk = false;
@@ -79,7 +82,7 @@ namespace BankomatSimulator
             return datiReport;
         }
 
-       
-        
+
+
     }
 }

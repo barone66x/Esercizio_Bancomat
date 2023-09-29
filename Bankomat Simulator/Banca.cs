@@ -7,9 +7,27 @@ using static BankomatSimulator.ContoCorrente;
 
 namespace BankomatSimulator
 {
- 
+
     class Banca
     {
+        public Banca(Banche data)
+        {
+            _utenti = new List<Utente>();
+            _nome = data.Nome;
+            foreach (var item in data.Utentis)
+            {
+
+                Utente utente = new Utente(item);
+                _utenti.Add(utente);
+            }
+        }
+
+        public Banca()
+        {
+
+        }
+
+
         public enum Funzionalita
         {
             Versamento,
@@ -31,7 +49,7 @@ namespace BankomatSimulator
 
         private string _nome;
         private List<Utente> _utenti;
-        private SortedList<int,Funzionalita> _funzionalita;
+        private SortedList<int, Funzionalita> _funzionalita;
 
 
         private Utente _utenteCorrente;
@@ -48,7 +66,7 @@ namespace BankomatSimulator
         /// </summary>
         /// <param name="credenziali">Dati inseriti dall'utente </param>
         /// <returns></returns>
-        public EsitoLogin Login(Utente credenziali, out Utente utente)
+        public EsitoLogin Login(Utenti credenziali, out Utente utente)
         {
             Utente utenteDaValidare = null;
             //ricerco utente sul 
@@ -56,7 +74,7 @@ namespace BankomatSimulator
 
             foreach (var elem in Utenti)
             {
-                if(elem.NomeUtente == credenziali.NomeUtente)
+                if (elem.NomeUtente == credenziali.NomeUtente)
                 {
                     utenteDaValidare = elem;
                     break;
@@ -66,8 +84,8 @@ namespace BankomatSimulator
             {
                 return EsitoLogin.UtentePasswordErrati;
             }
-              
-            
+
+
             if (credenziali.Password != utenteDaValidare.Password)
             {
                 utente = utenteDaValidare;
@@ -86,7 +104,7 @@ namespace BankomatSimulator
                     return EsitoLogin.AccountBloccato;
                 }
                 utenteDaValidare.TentativiDiAccessoErrati = 0;
-                return EsitoLogin.AccessoConsentito;   
+                return EsitoLogin.AccessoConsentito;
             }
         }
 

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EsercitazioneBancaModelStoreContainer" CdmEntityContainer="EsercitazioneBancaEntities">
+    <EntitySetMapping Name="Banches">
+      <EntityTypeMapping TypeName="EsercitazioneBancaModel.Banche">
+        <MappingFragment StoreEntitySet="Banche">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Banche_Funzionalita">
+      <EntityTypeMapping TypeName="EsercitazioneBancaModel.Banche_Funzionalita">
+        <MappingFragment StoreEntitySet="Banche_Funzionalita">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdBanca" ColumnName="IdBanca" />
+          <ScalarProperty Name="IdFunzionalita" ColumnName="IdFunzionalita" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContiCorrentes">
+      <EntityTypeMapping TypeName="EsercitazioneBancaModel.ContiCorrente">
+        <MappingFragment StoreEntitySet="ContiCorrente">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdUtente" ColumnName="IdUtente" />
+          <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+          <ScalarProperty Name="DataUltimaOperazione" ColumnName="DataUltimaOperazione" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Funzionalitas">
+      <EntityTypeMapping TypeName="EsercitazioneBancaModel.Funzionalita">
+        <MappingFragment StoreEntitySet="Funzionalita">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Movimentis">
+      <EntityTypeMapping TypeName="EsercitazioneBancaModel.Movimenti">
+        <MappingFragment StoreEntitySet="Movimenti">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NomeBanca" ColumnName="NomeBanca" />
+          <ScalarProperty Name="NomeUtente" ColumnName="NomeUtente" />
+          <ScalarProperty Name="Funzionalita" ColumnName="Funzionalita" />
+          <ScalarProperty Name="Quantita" ColumnName="Quantita" />
+          <ScalarProperty Name="DataOperazione" ColumnName="DataOperazione" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Utentis">
+      <EntityTypeMapping TypeName="EsercitazioneBancaModel.Utenti">
+        <MappingFragment StoreEntitySet="Utenti">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdBanca" ColumnName="IdBanca" />
+          <ScalarProperty Name="NomeUtente" ColumnName="NomeUtente" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Bloccato" ColumnName="Bloccato" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

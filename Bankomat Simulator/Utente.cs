@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace BankomatSimulator
 {
-    class Utente
+    public class Utente
     {
+        public Utente(Utenti data)
+        {
+
+            _nomeUtente = data.NomeUtente;
+            _password = data.Password;
+            _contoCorrente = new ContoCorrente(data.ContiCorrentes.First());
+        }
         private string _nomeUtente;
         private string _password;
         private int _tentativiDiAccessoErrati = 0;
@@ -38,6 +45,6 @@ namespace BankomatSimulator
                     _bloccato = true;
                 }
             }
-        }      
+        }
     }
 }
