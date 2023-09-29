@@ -11,7 +11,7 @@ namespace BankomatSimulator
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Funzionalita
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,11 +19,16 @@ namespace BankomatSimulator
         {
             this.Banche_Funzionalita = new HashSet<Banche_Funzionalita>();
         }
-    
+
         public long Id { get; set; }
         public string Nome { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Banche_Funzionalita> Banche_Funzionalita { get; set; }
+
+        //public static implicit operator Banca.Funzionalita(Funzionalita v)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

@@ -93,8 +93,11 @@ namespace BankomatSimulator
                 int key = 0;
                 foreach (var banca_db in ctx.Banches)
                 {
+
                     key++;
                     Banca banca = new Banca(banca_db);
+
+
 
                     banche.Add(key, banca);
 
